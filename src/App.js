@@ -1,13 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from './Theme/Common/Header';
 
 function App() {
+
   return (
     <div>
-      <h1>Sai Shraddha Enginnearing Under cunstructions</h1>
-      <h2>Day 1
-      </h2>
-      <h3>Development test</h3>
+      <Header />
     </div>
   );
 }
