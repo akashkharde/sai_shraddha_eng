@@ -34,13 +34,15 @@ function Header() {
   // useEffect(() => {
   //   setIsChecked(false)
   // }, [path])
-  console.log(isChecked);
 
   const hanldeDropdownOpen1 = () => {
-    setIsOpen1(!isOpen1)
+    // e.stopPropagation();
+    setIsOpen1(!isOpen1);
+    setIsOpen2(false);
   }
   const hanldeDropdownOpen2 = () => {
-    setIsOpen2(!isOpen2)
+    setIsOpen2(!isOpen2);
+    setIsOpen1(false);
   }
   return (
     <header>
@@ -70,23 +72,24 @@ function Header() {
                   <nav className='col nav_col_main d-flex'>
                     <div className='header_active'>
                       <Link to={'/'} className='link'>
-                        <div className={`col nav_logo_icon   ${path === '/' ? 'active' : ''}`}  >
+                        <div className={`col nav_logo_icon   ${path === '/' ? '' : ''}`}  >
                           <div className='navIConSize'><HiHomeModern /></div>
                           <div className="header_icon_name">Home</div>
                         </div>
                       </Link>
                     </div>
                     <div className='position-relative company_ header_active '>
-                      <Link to={'/about'} className='link' >
-                        <div className={`col nav_logo_icon  ${path === "/about" ? 'active' : ''}`} >
+                      <Link to={'/company'} className='link' >
+                        <div className={`col nav_logo_icon  ${path === "/company" ? '' : ''}`} >
                           <div className='navIConSize'><FaUsers /></div>
                           <div className='tab_arrow'>
                             <div className="header_icon_name">Company </div>
-                            <div className="next_icon" onClick={() =>  hanldeDropdownOpen1()}> {isOpen1 ? <span><IoCaretForward /></span>: <span className='next_rotate'> <IoCaretForward /></span>} </div>
+                            <div className="next_icon" onClick={(e) => hanldeDropdownOpen1(e)}> {isOpen1 ? <span className='next_rotate'> <IoCaretForward /></span>
+                              : <span><IoCaretForward /></span>} </div>
                           </div>
                         </div>
                       </Link>
-                      <div className={`text-center  text-nowrap comp_dropdown pt-2 ${isOpen1 ? "comp_dropdown_active" : ""}` }>
+                      <div className={`text-center  text-nowrap comp_dropdown pt-2 ${isOpen1 ? "comp_dropdown_active" : ""}`}>
                         <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span> Profile</div>
                         <hr />
                         <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span> Quality</div>
@@ -100,16 +103,17 @@ function Header() {
                       </div>
                     </div>
                     <div className='position-relative company_ header_active'>
-                      <Link to={'/products'} className='link' >
-                        <div className={`col nav_logo_icon  ${path === "/about" ? 'active' : ''}`} >
+                      <Link to={'/product'} className='link' >
+                        <div className={`col nav_logo_icon  ${path === "/product" ? '' : ''}`} >
                           <div className='navIConSize'><BiSolidCategory /></div>
                           <div className='tab_arrow'>
                             <div className="header_icon_name">Products</div>
-                            <div className="next_icon" onClick={() =>  hanldeDropdownOpen2()}> {isOpen2  ? <span><IoCaretForward /></span>: <span className='next_rotate'> <IoCaretForward /></span>} </div>
+                            <div className="next_icon" onClick={() => hanldeDropdownOpen2()}> {isOpen2 ? <span className='next_rotate'> <IoCaretForward /></span>
+                              : <span><IoCaretForward /></span>} </div>
                           </div>
                         </div>
                       </Link>
-                      <div className='text-center position-absolute text-nowrap comp_dropdown pt-2 '>
+                      <div className={`text-center position-absolute text-nowrap comp_dropdown pt-2 ${isOpen2 ? "comp_dropdown_active" : ""}`}>
                         <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span>Grub Screw</div>
                         <hr />
                         <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span>Cutting Tools</div>
@@ -123,17 +127,17 @@ function Header() {
                       </div>
                     </div>
                     <div className='header_active'>
-                      <Link to={'/work'} className='link' >
-                        <div className={`col nav_logo_icon  ${path === "/work" ? 'active' : ''}`} >
+                      <Link to={'/purchase'} className='link' >
+                        <div className={`col nav_logo_icon  ${path === "/purchase" ? 'active' : ''}`} >
                           <div className='navIConSize'><BiSolidPurchaseTag /></div>
 
                           <div className="header_icon_name">Bulk Purchase</div>
                         </div>
                       </Link>
                     </div>
-                    <div className='header_active'>
-                      <Link to={'/lifeAtPSE'} className='link' >
-                        <div className={`col nav_logo_icon  ${path === "/lifeAtPSE" ? 'active' : ''}`} >
+                    <div className={` ${path === "/blog" ? 'header_activeTabb' : ''}  header_active `}>
+                      <Link to={'/blog'} className='link' >
+                        <div className={`col nav_logo_icon`} >
                           <div className='navIConSize'><IoIosInformationCircle /></div>
 
                           <div className="header_icon_name">Blogs</div>
