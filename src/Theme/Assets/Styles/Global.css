@@ -8,7 +8,18 @@
 ::-webkit-scrollbar {
     display: none;
 }
+header {
+    /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
+   box-shadow:rgba(0, 0, 0, 0.10) 0px 7px 14px, rgba(0, 0, 0, 0.123) 0px 5px 6px;
+}
 
+.construction {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 img.logo {
     width: auto;
     height: 70px;
@@ -59,18 +70,17 @@ hr {
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.company_:hover .comp_dropdown {
-    animation: dropdownOpen 0.8s ease-in-out 0s 1 normal both;
-    display: block;
-}
 
 @keyframes dropdownOpen {
     0% {
         transform: translateY(100vh);
+        opacity: 0;
     }
 
     60% {
         transform: translateY(-20px);
+        opacity: 1;
+
     }
 
     100% {
@@ -83,9 +93,7 @@ hr {
     font-size: larger;
 }
 
-.dropdown_op:hover .next_arrow {
-    display: contents;
-}
+
 
 .dropdown_op {
     line-height: 3rem;
@@ -95,50 +103,19 @@ hr {
     cursor: pointer;
 }
 
-.dropdown_op:hover {
-    margin-left: 20px;
-    transform: scale(1, 1.1);
-    color: var(--primaryColor--);
-
-}
-
 .header_active {
     position: relative;
     padding: 0 5px;
     text-align: center;
+    white-space: nowrap;
 }
 
-.header_active:hover {
-    background: linear-gradient(to bottom, #eae3e7, transparent);
-}
 
-.header_active:hover .navIConSize {
-    transform: scale(1.3);
-    color: var(--primaryColor--);
-}
-
-.header_active:hover::before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--primaryColor--);
-    transform-origin: left;
-    transform: translateX(calc(var(--active-index, 0) * 100%));
-    transition: transform 0.3s ease;
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
-    border-radius: 18px;
-}
 .header_icon_name {
     transform: scale(1,1);
     transition: 0.2s all ;
 }
-.header_active:hover .header_icon_name {
-    color: var(--primaryColor--);
 
-}
 .tab_arrow {
     display: flex;
 }
@@ -148,4 +125,74 @@ hr {
 .next_icon {
     position: relative;
     z-index: 10;
+    /* top: -25px;
+    left: 47px; */
+}
+
+@media screen and (min-width: 992px) {
+    .header_active:hover .header_icon_name {
+        color: var(--primaryColor--);
+        transform: scale(1,1.2);
+    }
+
+    .header_active:hover::before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--primaryColor--);
+        transform-origin: left;
+        transform: translateX(calc(var(--active-index, 0) * 100%));
+        transition: transform 0.3s ease;
+        border-radius: 18px;
+    }
+
+    .header_active:hover {
+        background: linear-gradient(to bottom, #eae3e7, transparent);
+    }
+    .dropdown_op:hover {
+        margin-left: 20px;
+        transform: scale(1, 1.1);
+        color: var(--primaryColor--);
+    }
+    .company_:hover .comp_dropdown {
+        animation: dropdownOpen 0.8s ease-in-out;
+        display: block;
+    }
+    .header_active:hover .navIConSize {
+        transform: scale(1.3);
+        color: var(--primaryColor--);
+    }
+    .dropdown_op:hover .next_arrow {
+        display: contents;
+    }
+
+    /* *********************************ACTIVE TAB CSS *************************************************************************** */
+    .header_activeTab {
+        background: linear-gradient(to bottom, #ddcbd6, transparent);
+    }
+    
+    .header_activeTab::before {
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--primaryColor--);
+        transform-origin: left;
+        transform: translateX(calc(var(--active-index, 0) * 100%));
+        transition: transform 0.3s ease;
+        border-radius: 18px;
+    }
+    .navIConSize_acitve {
+        transform: scale(1.3);
+        color: var(--primaryColor--);
+    }
+    .header_icon_name_acitve {
+        color: var(--primaryColor--);
+        transform: scale(1,1.2);
+    }
 }

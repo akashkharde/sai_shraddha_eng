@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Home() {
+function ContactUs() {
   return (
     <div className='construction'>
       <h1>Page Under Cunstructions</h1>
@@ -8,4 +8,4 @@ function Home() {
   )
 }
 
-export default Home
+export default ContactUs
