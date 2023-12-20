@@ -27,7 +27,6 @@ function App() {
           <Route exact path='/blog' element={<Blog />} />
           <Route exact path='/contact' element={<ContactUs />} />
           <Route exact path='*' element={<PageNotFound />} />
-
         </Routes>
       </BrowserRouter>
   );
