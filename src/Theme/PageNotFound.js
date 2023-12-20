@@ -2,7 +2,7 @@ import React from 'react'
 
 function PageNotFound() {
   return (
-    <div>
+    <div className='construction'>
       <h2>404 - Page Not Found</h2>
       <p>Oops! It seems like this page doesn't exist.</p>
       <p>Please make sure you've entered the correct URL or go back to the <a href="/">home page</a>.</p>

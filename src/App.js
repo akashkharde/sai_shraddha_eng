@@ -12,6 +12,7 @@ import Products from './Theme/Products';
 import Purchase from './Theme/Purchase';
 import Blog from './Theme/Blog';
 import ContactUs from './Theme/ContactUs';
+import PageNotFound from './Theme/PageNotFound';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           <Route exact path='/purchase' element={<Purchase />} />
           <Route exact path='/blog' element={<Blog />} />
           <Route exact path='/contact' element={<ContactUs />} />
+          <Route exact path='*' element={<PageNotFound />} />
 
         </Routes>
       </BrowserRouter>
