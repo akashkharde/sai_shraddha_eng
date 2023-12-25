@@ -14,18 +14,16 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import { IoCaretForward } from "react-icons/io5";
 
-
-
 function Header() {
 
   const location = useLocation();
   const path = location.pathname
-  
+
   const [isChecked, setIsChecked] = useState(false);
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
 
-console.log(path);
+  console.log(path);
 
   const handleChange = () => {
     if (path) {
@@ -49,13 +47,15 @@ console.log(path);
   return (
     <header className=''>
       <nav className='bg-black w-100'>
-        <Container>
+
+        <Container >
           <div className='navbar1_text  row d-flex align-items-center justify-content-between heading' >
             <div className='text-light text-uppercase col d-flex align-items-center text-nowrap'> sai shraddha engineering</div>
             <div className=' col text-light text-center text-uppercase d-none d-lg-inline text-nowrap'><span className='mx-2'> <IoMailUnreadOutline size={24} /></span><span >devitglobe@gmail.com</span></div>
             <div className='col text-light text-uppercase justify-content-end  d-flex align-items-center text-align-end navbar_mail text-nowrap' > <FaPhone /> + 91 7719832542</div>
           </div>
         </Container>
+
         <nav className='navbar2 bg-white'>
           <Container>
             <div className='d-flex main-header'>
@@ -106,7 +106,7 @@ console.log(path);
                     </div>
                     <div className={`position-relative company_ header_active  ${path === '/product' ? 'header_activeTab' : ''}`}>
                       <Link to={'/product'} className='link' >
-                        <div className={`col nav_logo_icon  ${path === "/product" ? '' : ''}`} >
+                        <div className={`col nav_logo_icon`} >
                           <div className={`navIConSize ${path === '/product' ? 'navIConSize_acitve' : ''} `}><BiSolidCategory /></div>
                           <div className='tab_arrow'>
                             <div className={`header_icon_name ${path === '/product' ? 'header_icon_name_acitve' : ''}`}>Products</div>
@@ -133,7 +133,7 @@ console.log(path);
                         <div className={`col nav_logo_icon`} >
                           <div className={`navIConSize ${path === '/purchase' ? 'navIConSize_acitve' : ''} `}><BiSolidPurchaseTag /></div>
 
-                          <div className={`header_icon_name ${path === '/purchase' ? 'header_icon_name_acitve' : ''}`}>Bulk Purchase</div>
+                          <div className={`header_icon_name ${path === '/purchase' ? '    ' : ''}`}>Bulk Purchase</div>
                         </div>
                       </Link>
                     </div>

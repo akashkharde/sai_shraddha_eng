@@ -8,9 +8,10 @@
 ::-webkit-scrollbar {
     display: none;
 }
+
 header {
     /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
-   box-shadow:rgba(0, 0, 0, 0.10) 0px 7px 14px, rgba(0, 0, 0, 0.123) 0px 5px 6px;
+    box-shadow: rgba(0, 0, 0, 0.10) 0px 7px 14px, rgba(0, 0, 0, 0.123) 0px 5px 6px;
 }
 
 .construction {
@@ -20,6 +21,7 @@ header {
     justify-content: center;
     flex-direction: column;
 }
+
 img.logo {
     width: auto;
     height: 70px;
@@ -68,6 +70,7 @@ hr {
     background-color: rgb(255 255 255 / 3%);
     backdrop-filter: blur(10px);
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    z-index: 99;
 }
 
 
@@ -112,16 +115,18 @@ hr {
 
 
 .header_icon_name {
-    transform: scale(1,1);
-    transition: 0.2s all ;
+    transform: scale(1, 1);
+    transition: 0.2s all;
 }
 
 .tab_arrow {
     display: flex;
 }
+
 .next_rotate svg {
     transform: rotate(90deg);
 }
+
 .next_icon {
     position: relative;
     z-index: 10;
@@ -129,10 +134,97 @@ hr {
     left: 47px; */
 }
 
+
+.homeSliderDivBack {
+    background-color: rgba(211, 209, 209, 0.61);
+    padding: 10px 40px;
+    width: 60%;
+    top: -100px;
+    position: relative;
+}
+
+.homeSliderCap {
+    color: #000;
+    font-size: 20px;
+    text-align: justify;
+}
+
+.homeSliderHeading {
+    color: #480d2f;
+    font-weight: 700;
+    text-align: center;
+    font-size: 50px;
+    transform: scale(1, 1.2);
+}
+
+img.imgabout {
+    width: -webkit-fill-available;
+    height: auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+
+.subHeading {
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--primaryColor--);
+    text-transform: uppercase;
+}
+
+.descJustify {
+    text-align: justify;
+}
+
+.productSliderText {
+    background-color: rgba(211, 209, 209, 0.61);
+    position: absolute;
+    bottom: 0;
+    height: 32px;
+    transition: all 0.3s ease-in-out;
+    left: 20px;
+    right: 20px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.productSliderText:hover {
+    height: 86px;
+}
+
+@keyframes showButton {
+    0% {
+        height: 32px;
+    }
+
+    100% {
+        height: max-content;
+    }
+}
+
+.each-slide {
+    width: 100%;
+    display: flex;
+    height: 300px;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+
+
+
+
+
+
 @media screen and (min-width: 992px) {
     .header_active:hover .header_icon_name {
         color: var(--primaryColor--);
-        transform: scale(1,1.2);
+        transform: scale(1, 1.2);
     }
 
     .header_active:hover::before {
@@ -149,22 +241,29 @@ hr {
         border-radius: 18px;
     }
 
+
+
     .header_active:hover {
         background: linear-gradient(to bottom, #eae3e7, transparent);
     }
+
     .dropdown_op:hover {
         margin-left: 20px;
         transform: scale(1, 1.1);
         color: var(--primaryColor--);
     }
+
     .company_:hover .comp_dropdown {
         animation: dropdownOpen 0.8s ease-in-out;
         display: block;
+        z-index: 99;
     }
+
     .header_active:hover .navIConSize {
         transform: scale(1.3);
         color: var(--primaryColor--);
     }
+
     .dropdown_op:hover .next_arrow {
         display: contents;
     }
@@ -173,7 +272,7 @@ hr {
     .header_activeTab {
         background: linear-gradient(to bottom, #ddcbd6, transparent);
     }
-    
+
     .header_activeTab::before {
         content: '';
         position: absolute;
@@ -187,12 +286,25 @@ hr {
         transition: transform 0.3s ease;
         border-radius: 18px;
     }
+
     .navIConSize_acitve {
         transform: scale(1.3);
         color: var(--primaryColor--);
     }
+
     .header_icon_name_acitve {
         color: var(--primaryColor--);
-        transform: scale(1,1.2);
+        transform: scale(1, 1.2);
+    }
+    .cardSlider .react-slideshow-wrapper {
+        width: 33.33% !important;
+        overflow: visible !important;
+    }
+    .each-slide {
+        width: 100%;
+        display: flex;
+        height: 300px;
+        flex-direction: column;
+        padding: 0 20px;
     }
 }
