@@ -7,7 +7,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { HiHomeModern } from "react-icons/hi2";
 import { FaUsers } from "react-icons/fa";
 import { BiSolidCategory } from "react-icons/bi";
-import { BiSolidPurchaseTag } from "react-icons/bi";
+import { BsFillTagsFill } from "react-icons/bs";
 import { IoIosInformationCircle } from "react-icons/io";
 import { FaHandshake } from "react-icons/fa";
 import { IoMdArrowDropdown } from "react-icons/io";
@@ -23,7 +23,6 @@ function Header() {
   const [isOpen1, setIsOpen1] = useState(false);
   const [isOpen2, setIsOpen2] = useState(false);
 
-  console.log(path);
 
   const handleChange = () => {
     if (path) {
@@ -44,9 +43,31 @@ function Header() {
     setIsOpen2(!isOpen2);
     setIsOpen1(false);
   }
+
+
+  const [isFixed, setIsFixed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const isFixedNow = scrollPosition >= 6 * window.innerHeight / 100;
+
+      if (isFixedNow !== isFixed) {
+        setIsFixed(isFixedNow);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [isFixed]);
+
+
   return (
     <header className=''>
-      <nav className='bg-black w-100'>
+      <nav className='bg-black'>
 
         <Container >
           <div className='navbar1_text  row d-flex align-items-center justify-content-between heading' >
@@ -56,7 +77,7 @@ function Header() {
           </div>
         </Container>
 
-        <nav className='navbar2 bg-white'>
+        <nav className={`navbar2 bg-white ${isFixed ? 'fixed-top' : ''}`}>
           <Container>
             <div className='d-flex main-header'>
               <div className='float-start'>
@@ -93,15 +114,15 @@ function Header() {
                       </Link>
                       <div className={`text-center  text-nowrap comp_dropdown pt-2 ${isOpen1 ? "comp_dropdown_active" : ""}`}>
                         <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span> Profile</div>
-                        <hr />
+                      <hr className="my-0" />
                         <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span> Quality</div>
-                        <hr />
+                      <hr className="my-0" />
                         <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span> services</div>
-                        <hr />
+                      <hr className="my-0" />
                         <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span> Why Us</div>
-                        <hr />
+                      <hr className="my-0" />
                         <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span> Mission and Vision</div>
-                        <hr />
+                      <hr className="my-0" />
                       </div>
                     </div>
                     <div className={`position-relative company_ header_active  ${path === '/product' ? 'header_activeTab' : ''}`}>
@@ -117,21 +138,21 @@ function Header() {
                       </Link>
                       <div className={`text-center position-absolute text-nowrap comp_dropdown pt-2 ${isOpen2 ? "comp_dropdown_active" : ""}`}>
                         <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span>Grub Screw</div>
-                        <hr />
+                      <hr className="my-0" />
                         <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span>Cutting Tools</div>
-                        <hr />
+                      <hr className="my-0" />
                         <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span>Press Parts</div>
-                        <hr />
+                      <hr className="my-0" />
                         <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span>Lab</div>
-                        <hr />
+                      <hr className="my-0" />
                         <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span>Mission and Vision</div>
-                        <hr />
+                      <hr className="my-0" />
                       </div>
                     </div>
                     <div className={` ${path === "/purchase" ? 'header_activeTab' : ''}  header_active `}>
                       <Link to={'/purchase'} className='link' >
                         <div className={`col nav_logo_icon`} >
-                          <div className={`navIConSize ${path === '/purchase' ? 'navIConSize_acitve' : ''} `}><BiSolidPurchaseTag /></div>
+                          <div className={`navIConSize ${path === '/purchase' ? 'navIConSize_acitve' : ''} `}><BsFillTagsFill /></div>
 
                           <div className={`header_icon_name ${path === '/purchase' ? '    ' : ''}`}>Bulk Purchase</div>
                         </div>
