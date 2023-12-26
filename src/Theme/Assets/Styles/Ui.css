@@ -66,7 +66,7 @@
     padding: 6px 15px;
     font-size: larger;
     font-weight: 500;
-    transform: scale(1,1.1);
+    transform: scale(1,1.0001);
 }
 
 
@@ -74,17 +74,17 @@
 
 /* ******************************************************************* CONTAINER  CSS START ************************************************************************* */
 .container_ui {
-    max-width: 1280px;
-    margin: auto;
+    max-width: 80rem;
+    width: 93%;
 }
 @media screen and (max-width: 1280px) {
     .container_ui {
-        margin: 0px 30px;
-    }
+        width: 93%;
+     }
 }
 
 @media screen and (max-width: 480px) {
     .container_ui {
-        margin: 0px 5px;
-    }
+        width: 93%;
+     }
 }

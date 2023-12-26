@@ -323,6 +323,12 @@
         height: 300px;
        
     }
+    .countupBox {
+        width: 100%;
+    }
+    .subHeading {
+        font-size: 22px;
+    }
 
 }
 

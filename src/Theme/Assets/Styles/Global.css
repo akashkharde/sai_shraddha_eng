@@ -14,6 +14,20 @@ header {
     box-shadow: rgba(0, 0, 0, 0.10) 0px 7px 14px, rgba(0, 0, 0, 0.123) 0px 5px 6px;
 }
 
+.compM {
+    margin-top: 40px !important;
+}
+
+.displayCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardShadow {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
 .construction {
     height: 80vh;
     display: flex;
@@ -28,7 +42,7 @@ img.logo {
 }
 
 .navbar1_text {
-    padding: 5px 0px;
+   height: 6vh;
 }
 
 .nav_col_main {
@@ -41,7 +55,9 @@ img.logo {
     flex-direction: column;
     text-decoration: none;
 }
-
+.navbar2 {
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
 .link {
     text-decoration: none;
     color: #000;
@@ -54,11 +70,13 @@ img.logo {
 }
 
 hr {
-    margin: 0rem 0 !important;
+    margin: 3rem 0 !important;
     color: inherit;
     border: 0;
     border-top: var(--bs-border-width) solid;
     opacity: .25;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .13), 0 1px 1px 0 rgba(0, 0, 0, .11);
+
 }
 
 .comp_dropdown {
@@ -215,13 +233,53 @@ img.imgabout {
     padding: 0 20px;
 }
 
+.countup {
+    font-family: Montserrat, sans-serif !important;
+}
 
+.countupNum {
+    font-size: 4.5rem;
+    color: var(--primaryColor--);
+}
 
+.countupBox {
+    padding: 20px 0px;
+    min-width: 70%;
+    border-radius: 10px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    /* box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset; */
+    /* box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px; */
+    text-align: center;
+}
 
+.usCol {
+    color: #29071b !important;
+}
+.primaryColor {
+    color: var(--primaryColor--);
+}
+.footer_main {
+    background-color: var(--primaryColor--);
+}
+ul {
+    list-style-type: none;
+}
+.footerSvg {
+    width: 70px;
+    background-color: black;
+    border: 1px;
+    border-radius: 39px;
+    height: 70px;
+    margin: 2px 0;
+    position: absolute;
+    z-index: 12;
+    margin-top: 35px;
+}
 
 
 
 @media screen and (min-width: 992px) {
+
     .header_active:hover .header_icon_name {
         color: var(--primaryColor--);
         transform: scale(1, 1.2);
@@ -296,10 +354,12 @@ img.imgabout {
         color: var(--primaryColor--);
         transform: scale(1, 1.2);
     }
+
     .cardSlider .react-slideshow-wrapper {
         width: 33.33% !important;
         overflow: visible !important;
     }
+
     .each-slide {
         width: 100%;
         display: flex;
