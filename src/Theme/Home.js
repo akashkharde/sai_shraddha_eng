@@ -13,6 +13,7 @@ import prod2 from '../Theme/Assets/Img/prod2.jpg';
 import prod3 from '../Theme/Assets/Img/prod3.jpg';
 import prod4 from '../Theme/Assets/Img/prod4.jpg';
 import prod5 from '../Theme/Assets/Img/prod5.jpg';
+import CountUp from 'react-countup';
 
 
 
@@ -243,7 +244,7 @@ const images = [
 function Home() {
 
   const properties = {
-    duration:300000,
+    duration: 2000,
     transitionDuration: 500,
     infinite: true,
     indicators: false,
@@ -253,7 +254,7 @@ function Home() {
     get slides() {
       return images.map((image, index) => (
         <div key={index} className="each-slide  position-relative">
-          <img src={image.url} alt={`slide-${index}`} className='  overflow-hidden col'  />
+          <img src={image.url} alt={`slide-${index}`} className='  overflow-hidden col' />
           <div className='productSliderText col'>
             <div className='fs-4'>{image.name}</div>
             <Button size={'medium'} className={'my-2'} >{image.button}</Button>
@@ -269,10 +270,10 @@ function Home() {
       position: 'relative',
     },
   };
-
+  const val = "hii"
 
   return (
-    <div className="slide-container">
+    <div className="slide-container" title='Sai Shraddha Enginnering '>
       <Slide>
         {slideImages.map((slideImage, index) => (
           <div key={index}>
@@ -312,6 +313,17 @@ function Home() {
         <div className='my-4'>
           <div className="cardSlider" style={properties.containerStyle}>
             <Slide {...properties} className='react-slideshow-wrapperr'>{properties.slides}</Slide>
+          </div>
+        </div>
+        <div className='mt-4 row'>
+          <div className='col'>
+            hiiii
+          </div>
+          <div className='col'>
+            hiiii
+          </div>
+          <div className='col'>
+            <h1> <CountUp start={0} end={20} duration={2}/></h1>
           </div>
         </div>
       </Container>
