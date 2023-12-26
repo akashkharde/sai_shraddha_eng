@@ -244,7 +244,7 @@ const images = [
 function Home() {
 
   const properties = {
-    duration: 2000,
+    duration: 3000,
     transitionDuration: 500,
     infinite: true,
     indicators: false,
