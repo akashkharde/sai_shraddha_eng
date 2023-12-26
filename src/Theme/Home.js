@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Container from './Ui/Container';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
@@ -14,6 +14,9 @@ import prod3 from '../Theme/Assets/Img/prod3.jpg';
 import prod4 from '../Theme/Assets/Img/prod4.jpg';
 import prod5 from '../Theme/Assets/Img/prod5.jpg';
 import CountUp from 'react-countup';
+import { FaHandshake } from "react-icons/fa";
+import clientLogo from '../Theme/Assets/Img/logo.avif';
+import { AiFillCustomerService } from "react-icons/ai";
 
 
 
@@ -270,10 +273,55 @@ function Home() {
       position: 'relative',
     },
   };
-  const val = "hii"
+
+
+  const [isVisible1, setIsVisible1] = useState(false);
+  const [isVisible2, setIsVisible2] = useState(false);
+  const [isVisible3, setIsVisible3] = useState(false);
+  const [isVisible4, setIsVisible4] = useState(false);
+
+  const endCount1 = 10;
+  const endCount2 = 30;
+  const endCount3 = 20;
+  const endCount4 = 5290;
+
+  const targetRef1 = useRef(null);
+  const targetRef2 = useRef(null);
+  const targetRef3 = useRef(null);
+  const targetRef4 = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (targetRef1.current) {
+        const targetRect = targetRef1.current.getBoundingClientRect();
+        const isTargetVisible = targetRect.top <= window.innerHeight && targetRect.bottom >= 0;
+        setIsVisible1(isTargetVisible);
+      }
+      if (targetRef2.current) {
+        const targetRect = targetRef2.current.getBoundingClientRect();
+        const isTargetVisible = targetRect.top <= window.innerHeight && targetRect.bottom >= 0;
+        setIsVisible2(isTargetVisible);
+      }
+      if (targetRef3.current) {
+        const targetRect = targetRef3.current.getBoundingClientRect();
+        const isTargetVisible = targetRect.top <= window.innerHeight && targetRect.bottom >= 0;
+        setIsVisible3(isTargetVisible);
+      }
+      if (targetRef4.current) {
+        const targetRect = targetRef4.current.getBoundingClientRect();
+        const isTargetVisible = targetRect.top <= window.innerHeight && targetRect.bottom >= 0;
+        setIsVisible4(isTargetVisible);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <div className="slide-container" title='Sai Shraddha Enginnering '>
+    <div className="slide-container"title='Sai Shraddha Enginnering '>
       <Slide>
         {slideImages.map((slideImage, index) => (
           <div key={index}>
@@ -288,18 +336,20 @@ function Home() {
         ))}
       </Slide>
       <Container>
-        <div className='row my-4'>
-          <div className='col-lg-4 col-md-6 col-sm-12 p-4'>  <img src={img} className='imgabout' alt='About' /></div>
-          <div className='col-lg-8 col-md-6 col-sm-12 text-left p-4  '>
-            <div className='text-nowrap'><span className='subHeading'><MdOutlineMiscellaneousServices /> </span><span className='subHeading'>Service Info</span></div>
-            <div className='descJustify'>
+        <div className='row '>
+          <div className='col-lg-4 col-md-6 col-sm-12 p-4 d-flex' >  <img src={img} className='imgabout' alt='About' title='Service image' /></div>
+          <div className='col-lg-8 col-md-6 col-sm-12 text-left p-4 '>
+            <div  className='text-nowrap'><span className='subHeading'><MdOutlineMiscellaneousServices /> </span><span className='subHeading'>Service Info</span></div>
+            <div className='descJustify' title='Services Information'>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </div>
-            <div className='my-4'><Button size={'large'}>Explore Our Services</Button></div>
+            <div title='Explore Services' className='my-4'><Button size={'large'}>Explore Our Services</Button></div>
           </div>
         </div>
 
-        <div className='row my-4'>
+        <hr />
+
+        <div className='row '  title='Our Experties'>
           <div className='col-lg-8 col-md-6 col-sm-12 text-left p-4  '>
             <div className='text-nowrap'><span className='subHeading'><MdVerifiedUser /> </span><span className='subHeading'>Our Experties</span></div>
             <div className='descJustify'>
@@ -307,25 +357,96 @@ function Home() {
             </div>
             <div className='my-4'><Button size={'large'}>Our Experties</Button></div>
           </div>
-          <div className='col-lg-4 col-md-6 col-sm-12 p-4'>  <img src={img} className='imgabout' alt='About' /></div>
+          <div className='col-lg-4 col-md-6 col-sm-12 p-4 d-flex'>  <img src={img} className='imgabout' alt='About' title='experties image' /></div>
         </div>
 
-        <div className='my-4'>
+        <hr />
+
+        <div className=''  title='Our Products' >
           <div className="cardSlider" style={properties.containerStyle}>
             <Slide {...properties} className='react-slideshow-wrapperr'>{properties.slides}</Slide>
           </div>
         </div>
-        <div className='mt-4 row'>
-          <div className='col'>
-            hiiii
+
+        <hr />
+
+        <div className=' row countup'  title='why Us'>
+          <div className='subHeading text-center mb-4'><span className='subHeading'><FaHandshake /></span> Why Us</div>
+          <div className='col-lg-6 col-md-6 col-sm-12'>
+            <div className="d-flex displayCenter mb-4" >
+              <div className='countupBox'>
+                <div className='countupNum fw-bold' ref={targetRef1}> {!isVisible1 && "0"} {isVisible1 && <CountUp start={1} end={endCount1} duration={5} />} + </div>
+                <div className='subHeading  '>Yers Of Experience</div>
+              </div>
+            </div>
+            <div className="d-flex displayCenter  mb-4" >
+              <div className='countupBox'>
+                <div className='countupNum fw-bold' ref={targetRef2}> {!isVisible2 && "0"} {isVisible2 && <CountUp start={1} end={endCount2} duration={5} />} + </div>
+                <div className='subHeading usCol' >Number Of Employs</div>
+              </div>
+            </div>
           </div>
-          <div className='col'>
-            hiiii
+          <div className='col-lg-6 col-md-6 col-sm-12'>
+            <div className="d-flex displayCenter  mb-4">
+              <div className='countupBox'>
+                <div className='countupNum fw-bold' ref={targetRef3}> {!isVisible3 && "0"} {isVisible3 && <CountUp start={1} end={endCount3} duration={5} />} + </div>
+                <div className='subHeading usCol' >Number Of Clients</div>
+              </div>
+            </div>
+            <div className="d-flex displayCenter  mb-4" >
+              <div className='countupBox'>
+                <div className='countupNum fw-bold' ref={targetRef4}> {!isVisible4 && "0"} {isVisible4 && <CountUp start={1} end={endCount4} duration={5} />} + </div>
+                <div className='subHeading usCol' >Product Delivered</div>
+              </div>
+            </div>
           </div>
-          <div className='col'>
-            <h1> <CountUp start={0} end={20} duration={2}/></h1>
+          <div className='col d-flex displayCenter '><Button className={'large'} >Explore More</Button></div>
+        </div>
+
+        <hr />
+
+        <div className=' row '>
+          <div className='subHeading text-center mb-4'><span className='subHeading'><AiFillCustomerService /></span> Our Clients</div>
+
+          <div className='col-lg-2 col-md-3 col-sm-6 col-6 mb-3'>
+            <img src={clientLogo} alt='' className='w-100 cardShadow' />
+          </div>
+          <div className='col-lg-2 col-md-3 col-sm-6 col-6 mb-3'>
+            <img src={clientLogo} alt='' className='w-100 cardShadow' />
+          </div>
+          
+          <div className='col-lg-2 col-md-3 col-sm-6 col-6 mb-3'>
+            <img src={clientLogo} alt='' className='w-100 cardShadow' />
+          </div>
+          <div className='col-lg-2 col-md-3 col-sm-6 col-6 mb-3'>
+            <img src={clientLogo} alt='' className='w-100 cardShadow' />
+          </div>
+          <div className='col-lg-2 col-md-3 col-sm-6 col-6 mb-3'>
+            <img src={clientLogo} alt='' className='w-100 cardShadow' />
+          </div>
+          <div className='col-lg-2 col-md-3 col-sm-6 col-6 mb-3' >
+            <img src={clientLogo} alt='' className='w-100 cardShadow' />
+          </div>
+          <div className='col-lg-2 col-md-3 col-sm-6 col-6 mb-3'>
+            <img src={clientLogo} alt='' className='w-100 cardShadow' />
+          </div>
+          <div className='col-lg-2 col-md-3 col-sm-6 col-6'>
+            <img src={clientLogo} alt='' className='w-100 cardShadow' />
+          </div>
+          <div className='col-lg-2 col-md-3 col-sm-6 col-6'>
+            <img src={clientLogo} alt='' className='w-100 cardShadow' />
+          </div>
+          <div className='col-lg-2 col-md-3 col-sm-6 col-6'>
+            <img src={clientLogo} alt='' className='w-100 cardShadow' />
+          </div>
+          <div className='col-lg-2 col-md-3 col-sm-6 col-6'>
+            <img src={clientLogo} alt='' className='w-100 cardShadow' />
+          </div>
+          <div className='col-lg-2 col-md-3 col-sm-6 col-6' >
+            <img src={clientLogo} alt='' className='w-100 cardShadow' />
           </div>
         </div>
+        <hr />
       </Container>
     </div>
   )
