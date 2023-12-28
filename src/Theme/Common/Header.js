@@ -70,10 +70,10 @@ function Header() {
       <nav className='bg-black'>
 
         <Container >
-          <div className='navbar1_text  row d-flex align-items-center justify-content-between heading' >
-            <div className='text-light text-uppercase col d-flex align-items-center text-nowrap'> sai shraddha engineering</div>
+          <div className='navbar1_text  row d-flex align-items-center justify-content-between topheading' >
+            <div className='text-light text-uppercase col d-flex align-items-center text-nowrap topheading px-0'> sai shraddha engineering</div>
             <div className=' col text-light text-center text-uppercase d-none d-lg-inline text-nowrap'><span className='mx-2'> <IoMailUnreadOutline size={24} /></span><span >devitglobe@gmail.com</span></div>
-            <div className='col text-light text-uppercase justify-content-end  d-flex align-items-center text-align-end navbar_mail text-nowrap' > <FaPhone /> + 91 7719832542</div>
+            <div className='col text-light text-uppercase justify-content-end  d-flex align-items-center text-align-end navbar_mail text-nowrap px-0' > <FaPhone /> + 91 7719832542</div>
           </div>
         </Container>
 
@@ -113,16 +113,22 @@ function Header() {
                         </div>
                       </Link>
                       <div className={`text-center  text-nowrap comp_dropdown pt-2 ${isOpen1 ? "comp_dropdown_active" : ""}`}>
-                        <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span> Profile</div>
-                      <hr className="my-0" />
-                        <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span> Quality</div>
-                      <hr className="my-0" />
-                        <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span> services</div>
-                      <hr className="my-0" />
-                        <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span> Why Us</div>
-                      <hr className="my-0" />
-                        <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span> Mission and Vision</div>
-                      <hr className="my-0" />
+                        <Link to='/company/quality' className='link'>
+                          <div className='dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span> Quality</div>
+                        </Link>
+                        <hr className="my-0" />
+                        <Link to='/company/services' className='link'>
+                          <div className='dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span> services</div>
+                        </Link>
+                        <hr className="my-0" />
+                        <Link to='/company/why-us' className='link'>
+                          <div className='dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span> Why Us</div>
+                        </Link>
+                        <hr className="my-0" />
+                        <Link to='/company/mission-vision' className='link'>
+                          <div className='dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span> Mission and Vision</div>
+                        </Link>
+                        <hr className="my-0" />
                       </div>
                     </div>
                     <div className={`position-relative company_ header_active  ${path === '/product' ? 'header_activeTab' : ''}`}>
@@ -137,16 +143,16 @@ function Header() {
                         </div>
                       </Link>
                       <div className={`text-center position-absolute text-nowrap comp_dropdown pt-2 ${isOpen2 ? "comp_dropdown_active" : ""}`}>
-                        <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span>Grub Screw</div>
-                      <hr className="my-0" />
-                        <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span>Cutting Tools</div>
-                      <hr className="my-0" />
-                        <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span>Press Parts</div>
-                      <hr className="my-0" />
-                        <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span>Lab</div>
-                      <hr className="my-0" />
-                        <div className='px-4 dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span>Mission and Vision</div>
-                      <hr className="my-0" />
+                        <div className='dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span>Grub Screw</div>
+                        <hr className="my-0" />
+                        <div className='dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span>Cutting Tools</div>
+                        <hr className="my-0" />
+                        <div className='dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span>Press Parts</div>
+                        <hr className="my-0" />
+                        <div className='dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span>Lab</div>
+                        <hr className="my-0" />
+                        <div className='dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span>Mission and Vision</div>
+                        <hr className="my-0" />
                       </div>
                     </div>
                     <div className={` ${path === "/purchase" ? 'header_activeTab' : ''}  header_active `}>

@@ -20,7 +20,7 @@ function Footer() {
                         </div>
                         <div className="col-sm-2 text-center">
                             <Link to='/purchase' title="Buy Tools in bulk quantity">
-                                <div className="subHeading displayCenter">
+                                <div className="heading displayCenter">
                                     <div className='footerSvg displayCenter text-light fs-1'>
                                         <BsFillTagsFill />
                                     </div>
@@ -28,7 +28,7 @@ function Footer() {
                             </Link>
                         </div>
                         <div className="col-sm-6 col-md-5 displayCenter  text-light">
-                            <h5 className='mb-0 displayCenter'><span className='subHeading text-light'><RiCustomerServiceFill /></span> Our Executive will get in Touch</h5>
+                            <h5 className='mb-0 displayCenter'><span className='heading text-light'><RiCustomerServiceFill /></span> Our Executive will get in Touch</h5>
                         </div>
                     </div>
                 </Container>
