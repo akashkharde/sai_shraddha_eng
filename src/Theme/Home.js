@@ -13,10 +13,10 @@ import prod2 from '../Theme/Assets/Img/prod2.jpg';
 import prod3 from '../Theme/Assets/Img/prod3.jpg';
 import prod4 from '../Theme/Assets/Img/prod4.jpg';
 import prod5 from '../Theme/Assets/Img/prod5.jpg';
-import CountUp from 'react-countup';
-import { FaHandshake } from "react-icons/fa";
 import clientLogo from '../Theme/Assets/Img/logo.avif';
 import { AiFillCustomerService } from "react-icons/ai";
+import CountUpComp from './SubComponents/CountUp';
+import { Link } from 'react-router-dom';
 
 
 
@@ -243,7 +243,56 @@ const images = [
 
 ];
 
-
+const OurClient = [
+  {
+    url: clientLogo,
+    title: "Client Logo"
+  },
+  {
+    url: clientLogo,
+    title: "Client Logo"
+  },
+  {
+    url: clientLogo,
+    title: "Client Logo"
+  },
+  {
+    url: clientLogo,
+    title: "Client Logo"
+  },
+  {
+    url: clientLogo,
+    title: "Client Logo"
+  },
+  {
+    url: clientLogo,
+    title: "Client Logo"
+  },
+  {
+    url: clientLogo,
+    title: "Client Logo"
+  },
+  {
+    url: clientLogo,
+    title: "Client Logo"
+  },
+  {
+    url: clientLogo,
+    title: "Client Logo"
+  },
+  {
+    url: clientLogo,
+    title: "Client Logo"
+  },
+  {
+    url: clientLogo,
+    title: "Client Logo"
+  },
+  {
+    url: clientLogo,
+    title: "Client Logo"
+  },
+]
 function Home() {
 
   const properties = {
@@ -275,53 +324,10 @@ function Home() {
   };
 
 
-  const [isVisible1, setIsVisible1] = useState(false);
-  const [isVisible2, setIsVisible2] = useState(false);
-  const [isVisible3, setIsVisible3] = useState(false);
-  const [isVisible4, setIsVisible4] = useState(false);
 
-  const endCount1 = 10;
-  const endCount2 = 30;
-  const endCount3 = 20;
-  const endCount4 = 5290;
-
-  const targetRef1 = useRef(null);
-  const targetRef2 = useRef(null);
-  const targetRef3 = useRef(null);
-  const targetRef4 = useRef(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (targetRef1.current) {
-        const targetRect = targetRef1.current.getBoundingClientRect();
-        const isTargetVisible = targetRect.top <= window.innerHeight && targetRect.bottom >= 0;
-        setIsVisible1(isTargetVisible);
-      }
-      if (targetRef2.current) {
-        const targetRect = targetRef2.current.getBoundingClientRect();
-        const isTargetVisible = targetRect.top <= window.innerHeight && targetRect.bottom >= 0;
-        setIsVisible2(isTargetVisible);
-      }
-      if (targetRef3.current) {
-        const targetRect = targetRef3.current.getBoundingClientRect();
-        const isTargetVisible = targetRect.top <= window.innerHeight && targetRect.bottom >= 0;
-        setIsVisible3(isTargetVisible);
-      }
-      if (targetRef4.current) {
-        const targetRect = targetRef4.current.getBoundingClientRect();
-        const isTargetVisible = targetRect.top <= window.innerHeight && targetRect.bottom >= 0;
-        setIsVisible4(isTargetVisible);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
 
   return (
-    <div className="slide-container"title='Sai Shraddha Enginnering '>
+    <div className="slide-container" title='Sai Shraddha Enginnering '>
       <Slide>
         {slideImages.map((slideImage, index) => (
           <div key={index}>
@@ -339,8 +345,8 @@ function Home() {
         <div className='row '>
           <div className='col-lg-4 col-md-6 col-sm-12 p-4 d-flex' >  <img src={img} className='imgabout' alt='About' title='Service image' /></div>
           <div className='col-lg-8 col-md-6 col-sm-12 text-left p-4 '>
-            <div  className='text-nowrap'><span className='subHeading'><MdOutlineMiscellaneousServices /> </span><span className='subHeading'>Service Info</span></div>
-            <div className='descJustify' title='Services Information'>
+            <div className='text-nowrap bg-white'><span className='heading'><MdOutlineMiscellaneousServices /> </span><span className='heading'>Service Info</span></div>
+            <div className='descJustify bg-white' title='Services Information'>MdVerifiedUser
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </div>
             <div title='Explore Services' className='my-4'><Button size={'large'}>Explore Our Services</Button></div>
@@ -349,10 +355,10 @@ function Home() {
 
         <hr />
 
-        <div className='row '  title='Our Experties'>
+        <div className='row ' title='Our Experties'>
           <div className='col-lg-8 col-md-6 col-sm-12 text-left p-4  '>
-            <div className='text-nowrap'><span className='subHeading'><MdVerifiedUser /> </span><span className='subHeading'>Our Experties</span></div>
-            <div className='descJustify'>
+            <div className='text-nowrap bg-white'><span className='heading'><MdVerifiedUser /> </span><span className='heading'>Our Experties</span></div>
+            <div className='descJustify bg-white'>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
             </div>
             <div className='my-4'><Button size={'large'}>Our Experties</Button></div>
@@ -362,89 +368,28 @@ function Home() {
 
         <hr />
 
-        <div className=''  title='Our Products' >
+        <div className='bg-white' title='Our Products' >
           <div className="cardSlider" style={properties.containerStyle}>
             <Slide {...properties} className='react-slideshow-wrapperr'>{properties.slides}</Slide>
           </div>
         </div>
 
         <hr />
-
-        <div className=' row countup'  title='why Us'>
-          <div className='subHeading text-center mb-4'><span className='subHeading'><FaHandshake /></span> Why Us</div>
-          <div className='col-lg-6 col-md-6 col-sm-12'>
-            <div className="d-flex displayCenter mb-4" >
-              <div className='countupBox'>
-                <div className='countupNum fw-bold' ref={targetRef1}> {!isVisible1 && "0"} {isVisible1 && <CountUp start={1} end={endCount1} duration={5} />} + </div>
-                <div className='subHeading  '>Yers Of Experience</div>
-              </div>
-            </div>
-            <div className="d-flex displayCenter  mb-4" >
-              <div className='countupBox'>
-                <div className='countupNum fw-bold' ref={targetRef2}> {!isVisible2 && "0"} {isVisible2 && <CountUp start={1} end={endCount2} duration={5} />} + </div>
-                <div className='subHeading usCol' >Number Of Employs</div>
-              </div>
-            </div>
-          </div>
-          <div className='col-lg-6 col-md-6 col-sm-12'>
-            <div className="d-flex displayCenter  mb-4">
-              <div className='countupBox'>
-                <div className='countupNum fw-bold' ref={targetRef3}> {!isVisible3 && "0"} {isVisible3 && <CountUp start={1} end={endCount3} duration={5} />} + </div>
-                <div className='subHeading usCol' >Number Of Clients</div>
-              </div>
-            </div>
-            <div className="d-flex displayCenter  mb-4" >
-              <div className='countupBox'>
-                <div className='countupNum fw-bold' ref={targetRef4}> {!isVisible4 && "0"} {isVisible4 && <CountUp start={1} end={endCount4} duration={5} />} + </div>
-                <div className='subHeading usCol' >Product Delivered</div>
-              </div>
-            </div>
-          </div>
-          <div className='col d-flex displayCenter '><Button className={'large'} >Explore More</Button></div>
-        </div>
-
+          <CountUpComp  />
+          <Link to='/company/why-us' className='col d-flex displayCenter link'><Button className={'large'} >Explore More</Button></Link>
         <hr />
 
         <div className=' row '>
-          <div className='subHeading text-center mb-4'><span className='subHeading'><AiFillCustomerService /></span> Our Clients</div>
-
-          <div className='col-lg-2 col-md-3 col-sm-6 col-6 mb-3'>
-            <img src={clientLogo} alt='' className='w-100 cardShadow' />
-          </div>
-          <div className='col-lg-2 col-md-3 col-sm-6 col-6 mb-3'>
-            <img src={clientLogo} alt='' className='w-100 cardShadow' />
-          </div>
-          
-          <div className='col-lg-2 col-md-3 col-sm-6 col-6 mb-3'>
-            <img src={clientLogo} alt='' className='w-100 cardShadow' />
-          </div>
-          <div className='col-lg-2 col-md-3 col-sm-6 col-6 mb-3'>
-            <img src={clientLogo} alt='' className='w-100 cardShadow' />
-          </div>
-          <div className='col-lg-2 col-md-3 col-sm-6 col-6 mb-3'>
-            <img src={clientLogo} alt='' className='w-100 cardShadow' />
-          </div>
-          <div className='col-lg-2 col-md-3 col-sm-6 col-6 mb-3' >
-            <img src={clientLogo} alt='' className='w-100 cardShadow' />
-          </div>
-          <div className='col-lg-2 col-md-3 col-sm-6 col-6 mb-3'>
-            <img src={clientLogo} alt='' className='w-100 cardShadow' />
-          </div>
-          <div className='col-lg-2 col-md-3 col-sm-6 col-6'>
-            <img src={clientLogo} alt='' className='w-100 cardShadow' />
-          </div>
-          <div className='col-lg-2 col-md-3 col-sm-6 col-6'>
-            <img src={clientLogo} alt='' className='w-100 cardShadow' />
-          </div>
-          <div className='col-lg-2 col-md-3 col-sm-6 col-6'>
-            <img src={clientLogo} alt='' className='w-100 cardShadow' />
-          </div>
-          <div className='col-lg-2 col-md-3 col-sm-6 col-6'>
-            <img src={clientLogo} alt='' className='w-100 cardShadow' />
-          </div>
-          <div className='col-lg-2 col-md-3 col-sm-6 col-6' >
-            <img src={clientLogo} alt='' className='w-100 cardShadow' />
-          </div>
+          <div className='heading text-center mb-4'><span className='heading'><AiFillCustomerService /></span> Our Clients</div>
+          {OurClient && OurClient.map((item, i) => {
+            return (
+              <React.Fragment key={i}>
+                <div className='col-lg-2 col-md-3 col-sm-6 col-6 mb-3' title={item.title}>
+                  <img src={item.url} alt='' className='w-100 cardShadow' />
+                </div>
+              </React.Fragment>
+            )})
+          }
         </div>
         <hr />
       </Container>
@@ -452,4 +397,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Home;
