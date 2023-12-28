@@ -13,6 +13,7 @@ import Purchase from './Theme/Purchase';
 import Blog from './Theme/Blog';
 import ContactUs from './Theme/ContactUs';
 import PageNotFound from './Theme/PageNotFound';
+import Footer from './Theme/Common/Footer';
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
           <Route exact path='/contact' element={<ContactUs />} />
           <Route exact path='*' element={<PageNotFound />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
   );
 }
