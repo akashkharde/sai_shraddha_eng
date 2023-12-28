@@ -155,12 +155,12 @@ function Header() {
                         <hr className="my-0" />
                       </div>
                     </div>
-                    <div className={` ${path === "/purchase" ? 'header_activeTab' : ''}  header_active `}>
-                      <Link to={'/purchase'} className='link' >
+                    <div className={` ${path === "/services" ? 'header_activeTab' : ''}  header_active `}>
+                      <Link to={'/services'} className='link' >
                         <div className={`col nav_logo_icon`} >
-                          <div className={`navIConSize ${path === '/purchase' ? 'navIConSize_acitve' : ''} `}><BsFillTagsFill /></div>
+                          <div className={`navIConSize ${path === '/services' ? 'navIConSize_acitve' : ''} `}><BsFillTagsFill /></div>
 
-                          <div className={`header_icon_name ${path === '/purchase' ? '    ' : ''}`}>Bulk Purchase</div>
+                          <div className={`header_icon_name ${path === '/services' ? '    ' : ''}`}>Services</div>
                         </div>
                       </Link>
                     </div>
