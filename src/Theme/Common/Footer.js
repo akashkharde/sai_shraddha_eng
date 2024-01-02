@@ -19,7 +19,7 @@ function Footer() {
                             <h5 className='mb-0'>Need Tools In Bulk</h5>
                         </div>
                         <div className="col-sm-2 text-center">
-                            <Link to='/purchase' title="Buy Tools in bulk quantity">
+                            <Link to='/services' title="Buy Tools in bulk quantity">
                                 <div className="heading displayCenter">
                                     <div className='footerSvg displayCenter text-light fs-1'>
                                         <BsFillTagsFill />
