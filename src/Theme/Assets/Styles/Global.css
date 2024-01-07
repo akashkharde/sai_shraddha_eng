@@ -5,9 +5,9 @@
 *                                    *
 *                                    *
 **************************************/
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
     display: none;
-}
+} */
 
 header {
     /* box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; */
@@ -42,7 +42,7 @@ img.logo {
 }
 
 .navbar1_text {
-   height: 6vh;
+    height: 6vh;
 }
 
 .nav_col_main {
@@ -55,9 +55,11 @@ img.logo {
     flex-direction: column;
     text-decoration: none;
 }
+
 .navbar2 {
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
+
 .link {
     text-decoration: none;
     color: #000;
@@ -65,8 +67,12 @@ img.logo {
 
 .navIConSize {
     font-size: 24px;
-    color: black;
+    color: #051C37;
     transition: all .2s ease-in-out;
+}
+
+.nav1bg {
+    background-color: #051C37;
 }
 
 hr {
@@ -150,6 +156,7 @@ hr {
     z-index: 10;
 
 }
+
 .imgIncrease {
     width: auto;
 }
@@ -249,15 +256,19 @@ img.imgabout {
 .usCol {
     color: #29071b !important;
 }
+
 .primaryColor {
     color: var(--primaryColor--);
 }
+
 .footer_main {
     background-color: var(--primaryColor--);
 }
+
 ul {
     list-style-type: none;
 }
+
 .footerSvg {
     width: 70px;
     background-color: black;
@@ -284,7 +295,7 @@ ul {
 
 .circleL1 {
     height: 200px;
-    background-color:#0a4b8f;
+    background-color: #0a4b8f;
     width: 200px;
     border-radius: 100%;
     z-index: 2;
@@ -312,7 +323,7 @@ ul {
 }
 
 .missionbg {
-    background-color: #a9abac;
+    background-color: #ebe9e9;
 }
 
 span.num {
@@ -333,6 +344,8 @@ span.num {
     align-items: center;
     justify-content: flex-end;
     padding: 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+
 }
 
 .shape {
@@ -342,6 +355,7 @@ span.num {
     color: white;
     filter: url('#goo');
     bottom: -225px;
+
 }
 
 .shape::before {
@@ -356,7 +370,7 @@ span.num {
     position: absolute;
     display: inline-block;
     width: 247px;
-   color: #c40e4b;
+    color: #c40e4b;
     filter: url(#goo);
     bottom: -220px;
     z-index: -2;
@@ -369,6 +383,7 @@ span.num {
     background: currentColor;
     clip-path: polygon(0 0, 100% 0, 100% 25%, 50% 45%, 0 25%);
 }
+
 .shapeOne1 {
     position: absolute;
     display: inline-block;
@@ -386,6 +401,7 @@ span.num {
     background: currentColor;
     clip-path: polygon(0 0, 100% 0, 100% 25%, 50% 45%, 0 25%);
 }
+
 .shapeOne2 {
     position: absolute;
     display: inline-block;
@@ -407,24 +423,151 @@ span.num {
 
 .contactFont {
     font-size: 70px;
-}
-.contactBg {
-
-        margin: 0px;
-        width: 100vw;
-        background-color: #00467F;
-        background-image:
-           radial-gradient(ellipse farthest-corner at 80vw 15vh ,
-            rgba( 250, 240, 128, 0.5) 5%, rgba( 250,240,128,0) 95%
-        );
-        background-attachment:fixed;
-        height: 100vh;
+    color: var(--primaryColor--);
 }
 
-.glass {
-    background-color: rgba( 255,255, 255, 0.2); /* transparent white */
-    color:white;
- }
+.contactCol1 {
+    background-color: #051C37;
+    overflow: hidden;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    color: #fff !important;
+}
+
+.contactDesign {
+    background-color: #1B539B;
+    border-radius: 100%;
+    height: 200px;
+    position: relative;
+    right: -71px;
+    top: 77px;
+    width: 200px;
+}
+
+.contactDesignsmallcircle {
+    height: 120px;
+    width: 120px;
+    background-color: rgba(18, 187, 209, 0.52);
+    position: absolute;
+    border-radius: 100%;
+    left: -45px;
+    z-index: 0;
+    top: -22px;
+}
+
+.contactDesignMain {
+    height: 150px;
+}
+
+.contactRow {
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    border-top-left-radius: 60px;
+    border-bottom-left-radius: 60px;
+    margin: 60px 0px;
+
+}
+
+.inputstyle {
+    border: 1px solid black !important;
+    height: 50px;
+}
+
+.contactAlert {
+    height: fit-content;
+    width: fit-content;
+    float: right;
+    background-color: #051c37;
+    color: white;
+    padding: 1px 8px;
+    border-radius: 9px;
+    gap: 5px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+.servicesBG {
+    background-color: #ebe9e9;
+}
+
+.services {
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.services:hover:before {
+    background: var(--primaryColor--);
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+}
+
+.services::before {
+    content: "";
+    position: absolute;
+    background: var(--primaryColor--);
+    right: -60px;
+    top: -40px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    transition: all .5s;
+    z-index: -1;
+}
+
+svg.servicesIcon {
+    color: white;
+    background-color: black;
+    padding: 5px;
+    font-size: 45px;
+    border-radius: 100%;
+}
+
+.services:hover svg.servicesIcon {
+    color: white;
+    background-color: black;
+    padding: 5px;
+    font-size: 45px;
+    border-radius: 100%;
+}
+
+.services:hover .subHeading {
+    color: white;
+}
+
+.services:hover .text {
+    color: white;
+}
+
+.blog {
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    border-radius: 30px;
+    border: 1px solid black;
+}
+
+.linkColor {
+    color: #3498db;
+}
+
+.blogDetails {
+    border: 1px solid black;
+    margin: 40px 0;
+}
+
+
+
 
 @media screen and (min-width: 992px) {
 
