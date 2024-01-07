@@ -67,7 +67,7 @@ function Header() {
 
   return (
     <header className=''>
-      <nav className='bg-black'>
+      <nav className='nav1bg'>
 
         <Container >
           <div className='navbar1_text  row d-flex align-items-center justify-content-between topheading' >
@@ -115,10 +115,6 @@ function Header() {
                       <div className={`text-center  text-nowrap comp_dropdown pt-2 ${isOpen1 ? "comp_dropdown_active" : ""}`}>
                         <Link to='/company/quality' className='link'>
                           <div className='dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span> Quality</div>
-                        </Link>
-                        <hr className="my-0" />
-                        <Link to='/company/services' className='link'>
-                          <div className='dropdown_op'><span className='next_arrow'><IoMdArrowRoundForward /></span> services</div>
                         </Link>
                         <hr className="my-0" />
                         <Link to='/company/why-us' className='link'>
