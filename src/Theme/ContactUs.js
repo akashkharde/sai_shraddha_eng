@@ -6,20 +6,21 @@ import { IoMailUnreadOutline } from "react-icons/io5";
 import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
+import ContactForm from './SubComponents/ContactForm'
 
 function ContactUs() {
   return (
     <div className='contactBg my-4'>
       <Container>
-        <div className='displayCenter flex-column '>
+        <div className='displayCenter flex-column  mb-4'>
           <h1 className='contactFont'>Let's Get Connected</h1>
           <h2 className='fs-2 my-4'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </h2>
         </div>
 
-        <div className='row contactRow'>
-          <div className='col-lg-5 col-md-7  col-sm-12 contactCol1 '>
+        <div className='row contactRow '>
+          <div className='col-lg-4 col-md-7  col-sm-12 contactCol1 '>
             <div className='p-4' >
               <h2 className='heading displayCenter text-white'>This Is heading</h2>
               <div className=' text text-white'> Lorem Ipsum is simply dummy text of the printing and typesetting industry. </div>
@@ -54,8 +55,8 @@ function ContactUs() {
               </div>
             </div>
           </div>
-          <div className='col-lg-7 col-md-7 col-sm-12'>
-           hiii
+          <div className='col-lg-8 col-md-7 col-sm-12 my-3'>
+         <ContactForm />
             </div>
         </div>
       </Container>
